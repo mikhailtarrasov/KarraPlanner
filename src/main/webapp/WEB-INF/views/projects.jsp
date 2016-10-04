@@ -4,7 +4,7 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form"%>
 <%@page session="false" %>
 
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
@@ -48,13 +48,13 @@
                 <c:if test="${!empty project.name}">
                     <tr>
                         <td>
-                            <form:label path="id">
+                            <form:label path="ID">
                                 <spring:message text="ID"/>
                             </form:label>
                         </td>
                         <td>
-                            <form:input path="id" readonly="true" size="8" disabled="true"/>
-                            <form:hidden path="id"/>
+                            <form:input path="ID" readonly="true" size="8" disabled="true"/>
+                            <form:hidden path="ID"/>
                         </td>
                     </tr>
                 </c:if>
