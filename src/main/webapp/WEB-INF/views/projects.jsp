@@ -28,7 +28,7 @@
             </tr>
             <c:forEach items="${listProjects}" var="project">
                 <tr>
-                    <td>${project.name}</td>
+                    <td><a href="/projectdata/${project.ID}" target="_blank">${project.name}</a></td>
                     <td>${project.description}</td>
                     <td>${project.deadline}</td>
                     <td>${project.id_creator}</td>
