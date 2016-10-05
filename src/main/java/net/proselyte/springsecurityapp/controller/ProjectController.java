@@ -35,7 +35,7 @@ public class ProjectController {
 
     @RequestMapping(value = "/projects/add", method = RequestMethod.POST)
     public String addProject(@ModelAttribute("project") Project project){
-        if(project.getID() == 0){
+        if(project.getID() == null){
             this.projectService.addProject(project);
         }else {
             this.projectService.updateProject(project);

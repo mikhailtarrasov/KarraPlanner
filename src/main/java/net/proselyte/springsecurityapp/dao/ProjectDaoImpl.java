@@ -9,8 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.*;
+import java.nio.charset.Charset;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
+/*import java.util.concurrent.ExecutionException;*/
 
 @Repository
 public class ProjectDaoImpl implements ProjectDao{
@@ -32,6 +33,7 @@ public class ProjectDaoImpl implements ProjectDao{
             transaction = session.beginTransaction();
 
             session.persist(project);
+
             logger.info("Project succsessfully saved. Project details: " + project);
 
             transaction.commit();
@@ -43,13 +45,6 @@ public class ProjectDaoImpl implements ProjectDao{
                 session.close();
             }
         }
-
-
-        /*Session session = this.sessionFactory.getCurrentSession();
-        //session.beginTransaction();
-        session.persist(project);
-        //session.getTransaction().commit();
-        logger.info("Project succsessfully saved. Project details: " + project);*/
     }
 
     @Override
@@ -74,15 +69,6 @@ public class ProjectDaoImpl implements ProjectDao{
                 session.close();
             }
         }
-
-
-
-
-        /*Session session = this.sessionFactory.getCurrentSession();
-        //session.beginTransaction();
-        session.update(project);
-        //session.getTransaction().commit();
-        logger.info("Project successfully update. Project details: " + project);*/
     }
 
     @Override
@@ -113,18 +99,6 @@ public class ProjectDaoImpl implements ProjectDao{
                 session.close();
             }
         }
-
-
-
-        /*Session session = this.sessionFactory.getCurrentSession();
-        //session.beginTransaction();
-        Project project = (Project) session.load(Project.class, new Long(id));
-
-        if(project != null){
-            session.delete(project);
-        }
-        //session.getTransaction().commit();
-        logger.info("Project successfully delete. Project details: " + project);*/
     }
 
     @Override
@@ -152,16 +126,6 @@ public class ProjectDaoImpl implements ProjectDao{
                 session.close();
             }
         }
-
-
-
-
-       /* Session session = this.sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        Project project = (Project) session.load(Project.class, new Long(id));
-
-        //session.getTransaction().commit();
-        logger.info("Project successfully loaded. Project details: " + project);*/
 
         return project;
     }
@@ -193,14 +157,7 @@ public class ProjectDaoImpl implements ProjectDao{
                 session.close();
             }
         }
-/*
-        this.sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        List<Project> projectList = session.createQuery("from Project").list();
-        for(Project project: projectList){
-            logger.info("Project list: " + project);
-        }
-        session.getTransaction().commit();*/
+
         return projectList;
     }
 }
