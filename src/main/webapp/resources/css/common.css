@@ -1,7 +1,13 @@
 body {
-    padding-top: 40px;
-    padding-bottom: 40px;
     background-color: #eee;
+}
+
+.main {
+    max-width: 980px;
+}
+
+.h1 {
+    margin: 0 auto;
 }
 
 .form-signin {
