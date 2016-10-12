@@ -37,16 +37,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="container">
                     <ul class="nav navbar-nav">
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="#">Users</a></li>
-                        <li class="active"><a href="/welcome">Home</a></li>
-                        <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
+                        <li><a href="/projects">Проекты</a></li>
+                        <li class="active"><a href="/welcome">Домой</a></li>
+                        <li><a onclick="document.forms['logoutForm'].submit()">Выйти</a></li>
                     </ul>
                 </div>
-                <!--<ul class="nav navbar-nav navbar-right">
-                    <li><a href="./index.html">Home</a></li>
+                <%--<ul class="nav navbar-nav navbar-right">
+                    <li><a href="${contextPath}/index">Home</a></li>
                     <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
-                </ul>-->
+                </ul>--%>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

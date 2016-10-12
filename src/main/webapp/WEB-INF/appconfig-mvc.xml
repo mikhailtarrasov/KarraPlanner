@@ -33,6 +33,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>net.proselyte.springsecurityapp.model.Project</value>
+                <value>net.proselyte.springsecurityapp.model.Task</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -54,6 +55,15 @@
     <bean id="projectService" class="net.proselyte.springsecurityapp.service.ProjectServiceImpl">
         <property name="projectDao" ref="projectDao"/>
     </bean>
+
+    <bean id="taskDao" class="net.proselyte.springsecurityapp.dao.TaskDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="taskService" class="net.proselyte.springsecurityapp.service.TaskServiceImpl">
+        <property name="taskDao" ref="taskDao"/>
+    </bean>
+
 
      <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 

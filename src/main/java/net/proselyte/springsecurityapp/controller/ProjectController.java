@@ -25,6 +25,8 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+
+
     @RequestMapping(value = "projects", method = RequestMethod.GET)
     public String listProjects(Model model){
         model.addAttribute("project", new Project());
@@ -44,25 +46,27 @@ public class ProjectController {
         return "redirect:/projects";
     }
 
-    @RequestMapping("/remove/{id}")
+    @RequestMapping("/projects/remove/{id}")
     public String removeProject(@PathVariable("id") Long id){
         this.projectService.removeProject(id);
 
         return "redirect:/projects";
     }
 
-    @RequestMapping("edit/{id}")
+    @RequestMapping("/projects/edit/{id}")
     public String editProject(@PathVariable("id") Long id, Model model){
         model.addAttribute("project", this.projectService.getProjectById(id));
+        // model.addAttribute("task", this.taskService.getTaskById(id));
+
         model.addAttribute("listProjects", this.projectService.listProjects());
 
         return "projects";
     }
 
-    @RequestMapping("projectdata/{id}")
+    /*@RequestMapping("projectdata/{id}")
     public String projectData(@PathVariable("id") Long id, Model model){
         model.addAttribute("project", this.projectService.getProjectById(id));
 
         return "projectdata";
-    }
+    }*/
 }
