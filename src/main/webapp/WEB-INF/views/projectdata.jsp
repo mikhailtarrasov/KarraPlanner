@@ -8,12 +8,12 @@
 <html>
 <head>
     <title>Project tasks</title>
-    <c:set var="project" value="${project}" scope="page"/>
+
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-
+    <c:set var="project" value="${project}" scope="page"/>
     <nav class="navbar navbar-default navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
